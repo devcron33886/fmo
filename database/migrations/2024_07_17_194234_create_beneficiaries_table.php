@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('sex');
             $table->string('status')->nullable();
+            $table->foreignId('vsla_id')->nullable()->constrained('vslas')->onDelete('cascade');
             $table->foreignId('district_id')->nullable()->constrained('districts')->onDelete('cascade');
             $table->foreignId('sector_id')->nullable()->constrained('sectors')->onDelete('cascade');
             $table->foreignId('cell_id')->nullable()->constrained('cells')->onDelete('cascade');

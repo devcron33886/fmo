@@ -24,6 +24,26 @@ class Beneficiary extends Model
     {
         return $this->hasMany(BeneficiaryField::class);
     }
+    public function supports(): HasMany
+    {
+        return $this->hasMany(Support::class);
+    }
+    public function vsla(): BelongsTo
+    {
+        return $this->belongsTo(Vsla::class);
+    }
+    public function district(): BelongsTo
+    {
+        return $this->belongsTo(District::class);
+    }
+    public function sector(): BelongsTo
+    {
+        return $this->belongsTo(Sector::class);
+    }
+    public function cell(): BelongsTo
+    {
+        return $this->belongsTo(Cell::class);
+    }
 
     public function village(): BelongsTo
     {
